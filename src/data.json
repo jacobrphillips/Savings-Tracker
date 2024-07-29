@@ -1,0 +1,24 @@
+{
+    "savings_entries": [
+        {
+            "date": "2024-07-14",
+            "amount": 100.00,
+            "goal_name": "Vacation"
+        },
+        {
+            "date": "2024-07-13",
+            "amount": 450.00,
+            "goal_name": "Vacation"
+        }
+    ],
+    "savings_goals": [
+        {
+            "name": "Vacation",
+            "target_amount": 1500.00
+        },
+        {
+            "name": "New Car",
+            "target_amount": 20000.00
+        }
+    ]
+}
