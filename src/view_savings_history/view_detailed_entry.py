@@ -29,7 +29,7 @@ def view_detailed_entry():
         print("|   Existing Savings Entries     |")
         print("---------------------------------")
         for i, entry in enumerate(data['savings_entries']):
-            print(f"| {i + 1}. {entry['date']} - ${entry['amount']:,.2f} |")
+            print(f"| {i + 1}. {entry['date']} - {entry['amount']:,.2f} - {entry['currency']}|")
         print("---------------------------------")
 
         try:
@@ -48,14 +48,17 @@ def view_detailed_entry():
                 # Find the associated goal
                 goal = next((g for g in data['savings_goals'] if g['name'] == goal_name), None)
                 goal_target_amount = goal.get('target_amount', 0.00) if goal else 0.00
+                goal_currency = goal.get('currency')
 
                 print("\n---------------------------------")
                 print("|          Detailed Entry        |")
                 print("---------------------------------")
                 print(f"| Date: {entry['date']}          |")
-                print(f"| Amount: ${entry['amount']:,.2f} |")
+                print(f"| Amount: {entry['amount']:,.2f} |")
+                print(f"| Currency: {entry['currency']:} |")
                 print(f"| Goal: {goal_name}             |")
-                print(f"| Goal Target Amount: ${goal_target_amount:,.2f} |")
+                print(f"| Goal Target Amount: {goal_target_amount:,.2f} |")
+                print(f"| Goal Currency: {goal_currency}  |")
                 print("---------------------------------")
 
                 return_to_menu = input(

@@ -19,7 +19,7 @@ def list_all_entries():
         print("| No entries available.         |")
     else:
         for i, entry in enumerate(data['savings_entries']):
-            print(f"| {i + 1}. {entry['date']} - ${entry['amount']:,.2f} |")
+            print(f"| {i + 1}. {entry['date']} - {entry['amount']:,.2f} - {entry['currency']} |")
 
     print("---------------------------------")
 

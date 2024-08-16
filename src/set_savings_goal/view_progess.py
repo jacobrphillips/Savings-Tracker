@@ -104,14 +104,16 @@ def view_detailed_progress():
             goal = data['savings_goals'][goal_index]
             name = goal.get('name', 'No Name')
             target_amount = goal.get('target_amount', 0.00)
+            target_currency = goal.get('currency')
             progress = calculate_progress(name, data['savings_entries'])
             progress_percentage = (progress / target_amount) * 100 if target_amount > 0 else 0
 
             print("\n---------------------------------")
             print(f"| Detailed Progress for {name} |")
             print("---------------------------------")
-            print(f"| Target Amount: ${target_amount:.2f} |")
-            print(f"| Amount Saved: ${progress:.2f}        |")
+            print(f"| Target Amount: {target_amount:.2f} |")
+            print(f"| Target Amount Currency: {target_currency:} |")
+            print(f"| Amount Saved: {progress:.2f}        |")
             print(f"| Progress: {progress_percentage:.2f}%   |")
 
             if progress_percentage >= 100:
